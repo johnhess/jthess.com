@@ -1,0 +1,27 @@
+/* footer styles */
+.contact {
+	margin-top: 15px;
+	margin-bottom: 15px;
+}
+
+/* footer magic */
+html, body {
+    height: 100%;
+}
+
+.non-footer {
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    margin: 0 auto -150px; /* the bottom margin is the negative value of the footer's height */
+}
+
+#jth-footer {
+	padding-top: 0;
+    height: 150px; /* .push must be the same height as .footer */
+    color: #777;
+}
+
+.push {
+    height: 150px;
+}
