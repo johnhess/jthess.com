@@ -20,6 +20,7 @@ html, body {
 	padding-top: 0;
     height: 150px; /* .push must be the same height as .footer */
     color: #777;
+    overflow: hidden;
 }
 
 .push {
