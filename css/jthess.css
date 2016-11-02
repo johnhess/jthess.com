@@ -26,3 +26,13 @@ html, body {
 .push {
     height: 150px;
 }
+
+.post-content img, iframe {
+    display: block;
+    margin-left: auto;
+    margin-right: auto
+}
+
+.post-content a {
+    color: #2a7ae2;
+}
