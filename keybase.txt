@@ -1,0 +1,54 @@
+==================================================================
+https://keybase.io/jthess
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of http://jthess.com
+  * I am jthess (https://keybase.io/jthess) on keybase.
+  * I have a public key ASAiA96GnqNwATA1hRiR1ud0THmL7GmAHTjG8T9aBH1WWAo
+
+To do so, I am signing this object:
+
+{
+    "body": {
+        "key": {
+            "eldest_kid": "01202203de869ea370013035851891d6e7744c798bec69801d38c6f13f5a047d56580a",
+            "host": "keybase.io",
+            "kid": "01202203de869ea370013035851891d6e7744c798bec69801d38c6f13f5a047d56580a",
+            "uid": "db01a79c0c483bafbfc5ae3787c13619",
+            "username": "jthess"
+        },
+        "service": {
+            "hostname": "jthess.com",
+            "protocol": "http:"
+        },
+        "type": "web_service_binding",
+        "version": 1
+    },
+    "client": {
+        "name": "keybase.io go client",
+        "version": "1.0.18"
+    },
+    "ctime": 1478568639,
+    "expire_in": 504576000,
+    "merkle_root": {
+        "ctime": 1478568559,
+        "hash": "dacb4e032b929f6395f8d122f0a4a88aa2bf94aa4fafd17afa8085743e1f448b027653dd371163239a8f19b4cf0a595250bd45438b0facc9aa61cff9904617e4",
+        "seqno": 703715
+    },
+    "prev": "264a5d11fbf39528b507756d70315667cf64fc3eba9a1a169cf1f2b4d42eb990",
+    "seqno": 6,
+    "tag": "signature"
+}
+
+which yields the signature:
+
+hKRib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEgIgPehp6jcAEwNYUYkdbndEx5i+xpgB04xvE/WgR9VlgKp3BheWxvYWTFAu97ImJvZHkiOnsia2V5Ijp7ImVsZGVzdF9raWQiOiIwMTIwMjIwM2RlODY5ZWEzNzAwMTMwMzU4NTE4OTFkNmU3NzQ0Yzc5OGJlYzY5ODAxZDM4YzZmMTNmNWEwNDdkNTY1ODBhIiwiaG9zdCI6ImtleWJhc2UuaW8iLCJraWQiOiIwMTIwMjIwM2RlODY5ZWEzNzAwMTMwMzU4NTE4OTFkNmU3NzQ0Yzc5OGJlYzY5ODAxZDM4YzZmMTNmNWEwNDdkNTY1ODBhIiwidWlkIjoiZGIwMWE3OWMwYzQ4M2JhZmJmYzVhZTM3ODdjMTM2MTkiLCJ1c2VybmFtZSI6Imp0aGVzcyJ9LCJzZXJ2aWNlIjp7Imhvc3RuYW1lIjoianRoZXNzLmNvbSIsInByb3RvY29sIjoiaHR0cDoifSwidHlwZSI6IndlYl9zZXJ2aWNlX2JpbmRpbmciLCJ2ZXJzaW9uIjoxfSwiY2xpZW50Ijp7Im5hbWUiOiJrZXliYXNlLmlvIGdvIGNsaWVudCIsInZlcnNpb24iOiIxLjAuMTgifSwiY3RpbWUiOjE0Nzg1Njg2MzksImV4cGlyZV9pbiI6NTA0NTc2MDAwLCJtZXJrbGVfcm9vdCI6eyJjdGltZSI6MTQ3ODU2ODU1OSwiaGFzaCI6ImRhY2I0ZTAzMmI5MjlmNjM5NWY4ZDEyMmYwYTRhODhhYTJiZjk0YWE0ZmFmZDE3YWZhODA4NTc0M2UxZjQ0OGIwMjc2NTNkZDM3MTE2MzIzOWE4ZjE5YjRjZjBhNTk1MjUwYmQ0NTQzOGIwZmFjYzlhYTYxY2ZmOTkwNDYxN2U0Iiwic2Vxbm8iOjcwMzcxNX0sInByZXYiOiIyNjRhNWQxMWZiZjM5NTI4YjUwNzc1NmQ3MDMxNTY2N2NmNjRmYzNlYmE5YTFhMTY5Y2YxZjJiNGQ0MmViOTkwIiwic2Vxbm8iOjYsInRhZyI6InNpZ25hdHVyZSJ9o3NpZ8RAwyzHKKzSt5/rgJLGbVvdZHTkZPnWmHFRn4qNrfJbP33sz0aV9dybmedfsrUo+SyNQg/9fUoKRniWIkdmVks9AKhzaWdfdHlwZSCkaGFzaIKkdHlwZQildmFsdWXEIJJvwR+GjiFlzn1Y5o+tlFps+fLOp31+q51VN6bpZHUxo3RhZ80CAqd2ZXJzaW9uAQ==
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/jthess
+
+==================================================================
