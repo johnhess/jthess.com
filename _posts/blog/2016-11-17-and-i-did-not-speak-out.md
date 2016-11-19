@@ -38,7 +38,7 @@ Spurred by
 [people](https://www.theguardian.com/technology/2016/nov/10/nsa-trump-protect-yourself)
 have been recommending a range of measures for self-protection for activists, journalists, and targeted groups.  Using a confidential email provider, 2-factor authentication, encrypted communications, Tor, a password manager, and not carrying sensitive information at [protests](https://ssd.eff.org/en/module/attending-protests-united-states) is great advice.
 
-But none of those things can protect you or anyone else from the information we've already let slip.  Who you communicate with is out there.  All it takes is the will to run the algorithm and we have a "registry" of Muslims or any other unfashionable group <small>[3]</small> .
+But none of those things can protect you or anyone else from the information we've already let slip.  Who you communicate with is out there.  All it takes is the will to run the algorithm and we have a "registry" of Muslims or any other "undesirable" group <small>[3]</small> .
 
 It can be comforting to think encryption and cryptography can empower Davids threatened by Goliaths.  Sometimes it can.  But not here.  There are zero ways for *individuals* to defend themselves against a Muslim registry based on this data.
 
