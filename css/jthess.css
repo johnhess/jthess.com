@@ -27,6 +27,14 @@ html, body {
     height: 150px;
 }
 
+/* "Logo" aka Name */
+.site-header .navbar-brand {
+    line-height: 60px;
+    text-shadow: none;
+}
+
+/* Blog (basically shitty medium rip off) */
+
 .post-content img, iframe {
     display: block;
     margin-left: auto;
@@ -52,7 +60,6 @@ html, body {
 .post-content small {
     font-size: 70%;
 }
-
 
 .caption {
     font-size: 12px;
