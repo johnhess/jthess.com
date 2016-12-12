@@ -8,9 +8,11 @@ layout: default
       <h2 class="section-title"><span>Posts</span></h2>
       <div class="col-md-8 col-md-offset-2">
         {% for post in site.posts %}
-          <a href="{{ post.url }}">
-            <h2>{{ post.title }} &mdash; {{ post.date | date_to_string }}</h2>
-          </a>
+          {% if post.category == "blog" %}
+            <a href="{{ post.url }}">
+              <h2>{{ post.title }} &mdash; {{ post.date | date_to_string }}</h2>
+            </a>
+          {% endif %}
         {% endfor %}
       </div>
     </div>
