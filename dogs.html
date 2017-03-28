@@ -1,0 +1,140 @@
+---
+layout: default
+---
+
+<script src="/js/dogs/tracking-min.js"></script>
+<script src="/js/dogs/tracking-min.js"></script>
+<script src="/js/dogs/face-min.js"></script>
+<script>
+  var lyingRate = .5;
+  function insertImage(filename) {
+    $('#demo-img').remove();
+    $('#demo-container').append($('<img>', {
+      src: '/images/' + filename,
+      id: 'demo-img'
+    })); 
+    clearOutput();
+    setTimeout(inspectCurrentImage, 100);  // make demo look like it's actually doing work
+  }
+
+  function clearOutput() {
+    $('.rect').remove();
+    $('.tracking-log').text('');
+  }
+  
+  function inspectCurrentImage () {
+    $('#log-line-2').text('> New image detected. Analyzing image without sending any data to server.');
+    var img = document.getElementById('demo-img');
+
+    var tracker = new tracking.ObjectTracker(['face']);
+    tracker.setStepSize(1.7);  
+
+    tracking.track('#demo-img', tracker);
+
+    tracker.on('track', function(event) {
+      var numHumans = event.data.length;
+      if (numHumans > 0) {
+        setTimeout(trackUserImageType('humans'), 500);  // make demo look like it's actually doing work
+      } else {
+        // simplifying assumption.  it could be a cat, too.
+        setTimeout(trackUserImageType('a dog'), 500);  // make demo look like it's actually doing work
+      }
+      event.data.forEach(function(rect) {
+        window.plot(rect.x, rect.y, rect.width, rect.height);
+      });
+    });
+
+    window.plot = function(x, y, w, h) {
+      var rect = document.createElement('div');
+      document.querySelector('.demo-container').appendChild(rect);
+      rect.classList.add('rect');
+      rect.style.width = w + 'px';
+      rect.style.height = h + 'px';
+      rect.style.left = (img.offsetLeft + x) + 'px';
+      rect.style.top = (img.offsetTop + y) + 'px';
+    };
+  };
+
+  /*  Track what kind of image the users are sending around
+   */
+  function trackUserImageType (imageType) {
+    $('#log-line-3').text('> Analysis determined the image is of ' + imageType + '.');
+    $('#log-line-4').text('> Applying differential privacy before reporting image type to server.');
+    var reportedImageType = differential(imageType);
+    _paq.push(['trackEvent', 'image', 'send', reportedImageType]);
+    setTimeout(function () {    // make demo look like it's actually doing work
+      $('#log-line-5').text('> Reporting that the images is of ' + reportedImageType + '.')
+      var reportIframe = $('#widgetIframe')[0];
+      reportIframe.src = reportIframe.src;  // trigger reload
+    }, 2000);
+
+  }
+
+  // simplified DP filter
+  function differential (imageType) {
+    var rv = Math.random();
+    if (rv < lyingRate / 2) {
+      return 'humans';
+    } else if (rv < lyingRate) {
+      return 'a dog';
+    } else {
+      return imageType;
+    }
+  }
+</script>
+
+<style>
+.rect {
+  border: 2px solid #a64ceb;
+  left: -1000px;
+  position: absolute;
+  top: -1000px;
+}
+</style>
+
+
+<section id="features" class="section section-hilite">
+  <div class="container">
+    <h2 class="section-title"><span><a href='//demo.cleaninsights.io'>Clean Insights Demo</a></span></h2>
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2">
+        <p>Suppose you run a service letting users send images to one another with end-to-end encryption.  You love your customers, and your customers love you because you respect their privacy.</p>
+        <p>Trendy photo sharing apps being what they are, you need to keep up with the Jones' and provide users with great filters.  With only so much time in the day, you decide you'll prioritize filters for the kinds of images your users share most often.</p>
+        <p>Now you're in a pinch.  You can determine the subject of each photo easily enough just by running some analytics on each user's device, but you don't want to directly record what each user does, building a database that could be hacked, subpoenaed, or misused internally.</p>
+        <p>Aha!  You can use Clean Insights to take a <a href="https://en.wikipedia.org/wiki/Differential_privacy">differentially private</a> recording of user activity.  You'll never know exactly what each user did, but you'll be able to tell what your users were doing as a group.</p>
+        <p>Here, try being a user and choose which picture to send (you can send as many as you like).  Sometimes, Clean Insights will tell the truth.  Other times, it'll hide your activity by telling a lie.</p>
+      </div>
+      <div class="col-md-8 col-md-offset-2 main-action text-center">
+        <a href="javascript:insertImage('dog.jpg')" class="btn btn-lg btn-danger">Send a picture of a dog</a>&nbsp;&nbsp;&nbsp;
+        <a href="javascript:insertImage('human.jpg')" class="btn btn-lg btn-danger">Send a picture of humans</a>&nbsp;&nbsp;&nbsp;
+      </div>
+    </div>
+
+    <div class="row">
+      <br/>
+      <div class="demo-frame col-md-8 col-md-offset-2">
+        <div id="fake-shell">
+          <pre>
+> Waiting for user to send image...
+<span id="log-line-2" class="tracking-log"></span>
+<span id="log-line-3" class="tracking-log"></span>
+<span id="log-line-4" class="tracking-log"></span>
+<span id="log-line-5" class="tracking-log"></span>
+          </pre>
+        </div>
+        <div id="demo-container" class="demo-container">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <h2 class="section-title"><span>What the site owner actually sees:</span></h2>
+    <div class="row">
+      <iframe id="widgetIframe" width="100%" height="350" src="https://demo.cleaninsights.io/index.php?module=Widgetize&action=iframe&secondaryDimension=eventAction&widget=1&moduleToWidgetize=Events&actionToWidgetize=getName&idSite=1&period=year&date=2017-12-21&disableLink=1&widget=1" scrolling="no" frameborder="0" marginheight="0" marginwidth="0"></iframe>
+
+    </div>
+  </div>
+</section>
