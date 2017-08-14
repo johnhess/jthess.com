@@ -1,0 +1,20 @@
+<!-- This executes a CSRF Attack against vcwa.veryveryvulnerable.com, a site I also own -->
+<html>
+<head>
+	<title>Article (and attempted CSRF)</title>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+	<script>
+		console.log('muahaha...');
+		$.post(
+			'http://ssda.veryveryvulnerable.com/guestbook/',
+			{message: 'POST with any payload the attacker wants... on behalf of a real user...'}
+		);
+	</script>
+</head>
+<body>
+	<h1>Not so easy, this time.</h1>
+	<p>This page sends the same request to SSDA that exploits VCWA.  But this time, the Django CSRFMiddleware stops the request before the view function gets called.</p>
+	<p>Pop open your developer tools and check out the response to your POST.</p>
+</body>
+</html>

