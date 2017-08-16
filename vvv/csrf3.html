@@ -1,13 +1,9 @@
-<!-- This executes a CSRF Attack against vcwa.veryveryvulnerable.com, a site I also own -->
-<html>
-<head>
-	<title>Article (and CSRF)</title>
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-</head>
-<body>
-	<h1>HTTP Methods Matter</h1>
-	<img src="http://ssda.veryveryvulnerable.com/nuke/"/>
-	<p>Django's CSRF Middleware only protects from "unsafe" HTTP requests, like POST.  A GET request is left unchecked because in HTTP-parlance, a GET shouldn't have any side-effect.</p>
-	<p>Here, we've embedded an image link to the URL we want our visitor to GET (ssda.veryveryvulnerable.com/nuke/).  No image loads, but your browser happily makes that GET request.</p>
-</body>
-</html>
+---
+layout: just-analytics
+---
+
+<!-- This executes a CSRF Attack against ssda.veryveryvulnerable.com, a site I also own -->
+<h1>HTTP Methods Matter</h1>
+<img src="http://ssda.veryveryvulnerable.com/nuke/"/>
+<p>Django's CSRF Middleware only protects from "unsafe" HTTP requests, like POST.  A GET request is left unchecked because in HTTP-parlance, a GET shouldn't have any side-effect.</p>
+<p>Here, we've embedded an image link to the URL we want our visitor to GET (ssda.veryveryvulnerable.com/nuke/).  No image loads, but your browser happily makes that GET request.</p>
