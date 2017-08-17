@@ -5,7 +5,7 @@ layout: default
 <section id="about" class="section section">
   <div class="container">
     <div class="row">
-      <h1 class="section-title"><span>Very Very Vulnerable, Inc.</span></h2>
+      <h1 class="section-title"><span>Very Very Vulnerable, Inc.</span></h1>
       <div class="col-md-8 col-md-offset-2">
         <p>This company doesn't exist. It's just a fiction I created for a talk at Django Boston. Their sprawling web empire is great for the sake of exploring how XSS and CSRF attacks work.</p>
         <p>If you're just landing here, check out the slides first.  Otherwise, the rest might be a bit confusing.</p>
@@ -26,6 +26,23 @@ layout: default
             </ul>
           </li>
           <li><a href="http://veryveryvulnerable.com">VeryVeryVulnerable.com</a> (<a href="https://github.com/johnhess/jthess.com/tree/veryveryvulnerable.com">source is just a branch of jthess.com</a>)</li>
+        </ul>
+      </div>
+    </div>
+    <br/>
+    <br/>
+    <div class="row">
+      <h2 class="section-title"><span>Additional Resources</span></h2>
+      <div class="col-md-8 col-md-offset-2">
+        <p>Looking for some more playgrounds to try out attacks?  There are a bunch out there.  Here are some I know of and that people have suggested to me.</p>
+        <ul>
+          <li><a href="https://www.owasp.org/index.php/Category:OWASP_WebGoat_Project">OWASP WebGoat</a></li>
+          <li><a href="https://google-gruyere.appspot.com/">Google's Gruyere</a></li>
+        </ul>
+        <p>Here's some reading that helped me make sense of things.</p>
+        <ul>
+          <li><a href="https://lcamtuf.blogspot.com/2010/10/http-cookies-or-how-not-to-design.html">"HTTP cookies, or how not to design protocols"</a></li>
+          <li><a href="https://publicsuffix.org/list/">My favorite thing I learned about while making this talk: The Public Suffix List.  It's the reason the last attack doesn't work when you access SSDA via ssda.herokuapp.com :-)</a></li>
         </ul>
       </div>
     </div>
