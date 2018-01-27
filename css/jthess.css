@@ -9,6 +9,10 @@ html, body {
     height: 100%;
 }
 
+p > a {
+    color: #f15f4c;
+}
+
 .non-footer {
     min-height: 100%;
     height: auto !important;
