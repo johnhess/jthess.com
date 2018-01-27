@@ -39,6 +39,10 @@ p > a {
 
 /* Blog (basically shitty medium rip off) */
 
+.blog-post {
+    margin-bottom: 20px;
+}
+
 .post-content img, iframe {
     display: block;
     margin-left: auto;
