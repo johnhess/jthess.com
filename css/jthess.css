@@ -78,3 +78,9 @@ p > a {
     margin-bottom: 20px;
 }
 
+/* Pi Eye Vis styles */
+.grid-wrapper {
+    width: 100%;
+    height: 380px;
+    overflow: hidden;
+}

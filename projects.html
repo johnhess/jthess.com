@@ -1,9 +1,56 @@
 ---
 layout: default
+extra_header: |
+    <link href="/pi-eye-demo/bezier.css" rel="stylesheet">
+    <script src="/pi-eye-demo/jquery-3.2.1.min.js"></script>
+    <script src="/pi-eye-demo/d3.v3.min.js"></script>
+    <script src="/pi-eye-demo/bezier.js"></script>
 ---
 
+<section id="features" class="section section-hilite">
+  <div class="container">
+    <h2 class="section-title"><span>Pi-Eye: A Tiny WiFi Traffic Visualizer</span></h2>
+    <div class="row">
 
-<section class="section section-hilite">
+      <div class="col-md-8 col-md-offset-2">
+        <p>You wouldn't have a sensitive conversation in a public space much less at a volume loud enough to be heard 100ft away.  Yet, that's exactly what our phones and laptops do all day.</p>
+        <p>To make it easy to see these non-audible (but quite public) conversations, I created <a href="https://github.com/johnhess/pi-eye">Pi-Eye</a>, a little sniffer/visualizer combo designed to run on a stand-alone Raspberry Pi.  It listens in on all the wi-fi traffic it can and shows a simple visualization of all the conversations in earshot (well, radioshot).</p>
+        <p>Everything Pi-Eye shows is visible to anyone on a plane or in a coffee shop or library.  And if that sounds unsettling, just imagine what your ISP can see -- every connection between every single subscriber and every site they talk to.  And, remember, <a href="https://www.usatoday.com/story/tech/news/2017/04/04/isps-can-now-collect-and-sell-your-data-what-know-internet-privacy/100015356/">ISPs can now sell your browsing history</a> to advertisers and other data brokers.</p>
+        <p>Here's a snapshot showing about a minute of traffic from my cell phone.  You can see me reading xkcd, my fitbit app phoning home, and connections to a dozen or so trackers and CDNs.</p>
+        <script>
+          const deviceIcon = '/pi-eye-demo/gregor_cresnar_device.png'
+          const firstSample = 1652;
+          const lastSample = 1652;
+          let sample = firstSample;
+            
+          let draw = () => {
+            $.get(`/pi-eye-demo/sample-data/tighter-test3/hist-${sample}.json`, (hists) => {
+              renderHists(hists, '#pi-eye-bezier-viz');
+              sample += 5
+              $('#frameno').html(sample)
+              if (sample < lastSample) {
+                setTimeout(draw, 250);
+              }
+            })
+          }
+
+          window.onload = draw;
+        </script>
+        <div class="grid-wrapper">
+          <div id="local"></div>
+          <div id="connections">
+            <svg id="beziers">
+              <g id="beziers-g"></g>
+            </svg>
+          </div>
+          <div id="external"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
   <div class="container">
     <h2 class="section-title"><span><a href='http://veryveryvulnerable.com'>Django Security: Live Fire Exercises</a></span></h2>
     <div class="row">
@@ -19,7 +66,7 @@ layout: default
   </div>
 </section>
 
-<section id="features" class="section section">
+<section id="features" class="section section-hilite">
   <div class="container">
     <h2 class="section-title"><span>Software Techniques Academics Should Steal from Industry</span></h2>
     <div class="row">
@@ -46,7 +93,7 @@ layout: default
   </div>
 </section>
 
-<section id="features" class="section section-hilite">
+<section id="features" class="section">
   <div class="container">
     <h2 class="section-title"><span>How Pickles can Bite</span></h2>
     <div class="row">
@@ -64,7 +111,7 @@ layout: default
   </div>
 </section>
 
-<section id="features" class="section">
+<section id="features" class="section section-hilite">
   <div class="container">
     <h2 class="section-title"><span><a href="https://fuckupnights.com/boston/">F.U.N. Boston</a></span></h2>
     <div class="row">
@@ -79,7 +126,7 @@ layout: default
   </div>
 </section>
 
-<section class="section section-hilite">
+<section class="section">
   <div class="container">
     <h2 class="section-title"><span><a href='//mavenbot.com'>I Built Maven, and You Should Use It</a></span></h2>
     <div class="row">
