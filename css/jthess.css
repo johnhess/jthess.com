@@ -22,7 +22,7 @@ p > a {
 
 #jth-footer {
 	padding-top: 0;
-    height: 150px; /* .push must be the same height as .footer */
+    min-height: 150px;
     color: #777;
     overflow: hidden;
 }
