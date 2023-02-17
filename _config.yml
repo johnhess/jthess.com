@@ -19,7 +19,7 @@ description: > # this means to ignore newlines until "baseurl:"
   John Hess's personal site.  It includes projects, blog, resume and contact
   information.
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "http://jthess.com" # the base hostname & protocol for your site
+url: "https://jthess.com" # the base hostname & protocol for your site
 twitter_username: johnhess
 github_username:  johnhess
 
