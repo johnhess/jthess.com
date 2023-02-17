@@ -24,7 +24,6 @@
             <li><a href="/">Home</a></li>
             <li><a href="/projects.html">Projects & Talks</a></li>
             <li><a href="/blog.html">Blog</a></li>
-            <li><a href="/resume.pdf">Resume</a></li>
           </ul>
         </div>
       </header>
@@ -54,27 +53,9 @@
     <script src="/js/bootstrap-3.0.3.min.js"></script>
     <script src="/js/jquery.singlePageNav.min.js"></script>
     <script src="/js/main.js"></script>
-    <script src="/js/clean-insights-auto-tracker.js"></script>
-    <script>
-      // Use the Clean Insights Matomo Instance via the CIMP.
-      // Site ID for jthess.com is 21.
-      const ci = CleanInsightsAutoTracker("https://metrics.cleaninsights.org/cleaninsights.php", 21);
-
-      function requestConsent() {
-        consented = confirm("Hi, I work on Clean Insights which protects your privacy while helping me understand what people are reading here.  Can I record which pages you visit?  If you click 'cancel', I wont keep any record of your visits here. \n\nYou can find more information at the bottom of this page.");
-        if (consented) {
-          ci.grantCampaign('visits');
-        } else {
-          ci.denyCampaign('visits');
-        }
-        return consented;
-      }
-
-      // Pop consent box if consent is not given yet.
-      if (!ci.campaignConsents.some((item) => { return item === 'visits' })) {
-          requestConsent();
-      }
-    </script>
+    {% include cleaninsights-setup.html %}
+    {% include plausible-setup.html %}
+    {% include fathom-setup.html %}
   </body>
 </html>
 

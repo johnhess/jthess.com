@@ -1,0 +1,12 @@
+<script src="/js/clean-insights-auto-tracker.js"></script>
+<script>
+    // Use the Clean Insights Matomo Instance via the CIMP.
+    // Site ID for jthess.com is 21.
+    const ci = CleanInsightsAutoTracker("https://metrics.cleaninsights.org/cleaninsights.php", 21);
+
+    // Automatically consent to cookie-less page view
+    if (!ci.campaignConsents.some((item) => { return item === 'visits' })) {
+        ci.grantCampaign('visits');
+    }
+    console.log("Clean insights loaded and set up.")
+</script>
