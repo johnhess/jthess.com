@@ -7,6 +7,8 @@
     // Automatically consent to cookie-less page view
     if (!ci.campaignConsents.some((item) => { return item === 'visits' })) {
         ci.grantCampaign('visits');
+        ci.grantFeature(CleanInsightsFeature.ua);
+        ci.grantFeature(CleanInsightsFeature.lang);
     }
     console.log("Clean insights loaded and set up.")
 </script>
