@@ -1,39 +1,187 @@
 ---
-# Only the main Sass file needs front matter (the dashes are enough)
+# Front matter tells Jekyll to process this file
 ---
-@charset "utf-8";
 
-// Our variables
-$base-font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-$base-font-size:   16px;
-$base-font-weight: 400;
-$small-font-size:  $base-font-size * 0.875;
-$base-line-height: 1.5;
+body {
+  font-family: 'Times New Roman', Times, serif;
+  color: black;
+  background-color: white;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+}
 
-$spacing-unit:     30px;
+a {
+  color: black; /* Or a dark blue like #000080 or #003366 */
+  text-decoration: underline;
+}
 
-$text-color:       #111;
-$background-color: #fdfdfd;
-$brand-color:      #2a7ae2;
+a:hover {
+  text-decoration: none;
+}
 
-$grey-color:       #828282;
-$grey-color-light: lighten($grey-color, 40%);
-$grey-color-dark:  darken($grey-color, 25%);
+.content-wrapper {
+  max-width: 800px; /* Adjust as needed for comfortable reading width */
+  margin: 20px auto; /* Centered with some top/bottom margin */
+  padding: 20px;
+}
 
-// Width of the content area
-$content-width:    800px;
+/* Basic typography for readability */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Times New Roman', Times, serif; /* Keep headings consistent or choose a simple sans-serif */
+  margin-top: 1.5em;
+  margin-bottom: 0.5em;
+  line-height: 1.2;
+}
 
-$on-palm:          600px;
-$on-laptop:        800px;
+h1 { font-size: 2.2em; }
+h2 { font-size: 1.8em; }
+h3 { font-size: 1.5em; }
+h4 { font-size: 1.2em; }
+h5 { font-size: 1em; }
+h6 { font-size: 0.9em; }
 
-// Minima also includes a mixin for defining media queries.
-// Use media queries like this:
-// @include media-query($on-palm) {
-//     .wrapper {
-//         padding-right: $spacing-unit / 2;
-//         padding-left: $spacing-unit / 2;
-//     }
-// }
+p {
+  margin-bottom: 1em;
+}
 
-// Import partials from the `minima` theme.
-@import "minima";
+ul, ol {
+  margin-bottom: 1em;
+  padding-left: 40px; /* Standard indentation */
+}
+
+li {
+  margin-bottom: 0.5em;
+}
+
+/* Remove default browser styling from header/nav if they exist and are not wanted */
+header, nav {
+    all: unset; /* This is a strong reset, use with caution or style individually */
+    display: block; /* Ensure they still behave as blocks if needed */
+}
+
+/* Simple navigation styling if you keep the nav */
+/* Commenting out for now, as the goal is ultra-simple */
+/*
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
+
+nav ul li {
+  display: inline;
+  margin-right: 15px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  font-weight: bold;
+}
+*/
+
+/* Ensure images are not overly large */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block; /* Prevents extra space below images */
+  margin: 1em 0; /* Some space around images */
+}
+
+/* Basic table styling */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 1em;
+}
+
+th, td {
+  border: 1px solid black;
+  padding: 8px;
+  text-align: left;
+}
+
+th {
+  background-color: #f0f0f0; /* Light grey for header */
+}
+
+/* Footer styling - keep it simple */
+footer {
+    all: unset;
+    display: block;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+    font-size: 0.9em;
+    border-top: 1px solid black;
+}
+
+/* Remove any sticky header behavior if it was there */
+.site-header, #header {
+    position: static !important; /* Override potential sticky positioning */
+    box-shadow: none !important; /* Remove shadows */
+}
+
+/* Remove complex footer styling if it was there */
+#jth-footer {
+    position: static !important;
+    min-height: auto !important;
+    padding: 20px !important;
+    color: black !important; /* Ensure text is black */
+    background-color: white !important; /* Ensure background is white */
+    border-top: 1px solid black; /* Simple separator */
+}
+
+/* Resetting some specific classes found in the original HTML to be very plain */
+.navbar-brand, .nav, .nav-pills, .pull-right, .container, .col-md-8, .col-md-offset-2, .contact, .copyright, .site-main {
+    all: unset;
+    display: block; /* Or inline, or whatever is most basic and functional */
+}
+
+/* Re-apply basic block behavior for layout elements that need it after 'all: unset' */
+.container, .site-main, .col-md-8, .col-md-offset-2 {
+    display: block;
+}
+
+.pull-right {
+  float: right; /* If still needed for basic layout */
+}
+.nav-pills {
+    padding-left: 0;
+    list-style: none;
+}
+.nav-pills > li {
+    display: inline-block; /* Basic horizontal nav */
+    margin-left: 10px;
+}
+.nav-pills > li > a {
+    padding: 5px 10px;
+}
+
+/* Ensure the .content-wrapper is effective within the main layout structure */
+.site-main {
+    /* This will be wrapped by content-wrapper in the HTML */
+}
+
+/* Basic styling for the header elements if they are to remain */
+.site-header {
+    padding: 10px 0;
+    border-bottom: 1px solid black;
+    text-align: center; /* Simple centering for header content */
+}
+
+.site-header .container { /* Assuming .container is used for centering header content */
+    max-width: 800px; /* Match content-wrapper or set as needed */
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex; /* Basic flex for horizontal alignment */
+    justify-content: space-between; /* Space out brand and nav */
+    align-items: center;
+}
+
+.navbar-brand {
+    font-size: 1.5em; /* Make it a bit larger than normal text */
+    font-weight: bold;
+    text-decoration: none;
+}
